@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:toolKit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+                    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:local="clr-namespace:SLGridExample"
+                    xmlns:dxb="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v10.2"                    
+                    >
+    
+    <DataTemplate x:Key="GridRowThemeKey_DataRowTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <ContentPresenter x:Name="defaultRowPresenter" Content="{Binding}" ContentTemplate="{Binding View.DefaultDataRowTemplate}" />
+            
+            <toolKit:Expander Grid.Row="1" 
+                              Header="Details info" 
+                              IsExpanded="{Binding Path=RowState.(local:MainPage.IsExpanded), Mode=TwoWay}" 
+                              ExpandDirection="Down">
+                
+                <local:GridDetailContainer IsVisible="{Binding Path=RowState.(local:MainPage.IsExpanded)}" 
+                                           GridItemsSourceBinding="{Binding Path=DataContext.Row.DetailedInfo, RelativeSource={RelativeSource TemplatedParent}}">
+                    
+                    <local:GridDetailContainer.Grid>
+                        
+                        <dxg:GridControl x:Name="detailGrid"
+                                     Height="200" 
+                                     Margin="0,3,10,3" 
+                                     Visibility="Visible" 
+                                     AutoPopulateColumns="True"
+                                     >
+                            <dxg:GridControl.View>
+                                <dxg:TableView AutoWidth="True" NavigationStyle="Row" AllowMoving="False" ShowGroupPanel="False" />
+                            </dxg:GridControl.View>
+                        </dxg:GridControl>
+                        
+                    </local:GridDetailContainer.Grid>
+                </local:GridDetailContainer>
+                
+            </toolKit:Expander>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

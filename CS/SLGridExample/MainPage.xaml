@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="SLGridExample.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:local="clr-namespace:SLGridExample"
+             >
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SLGridExample;component/Themes/GridDataRowTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <dxg:GridControl x:Name="grid" Margin="5" AutoPopulateColumns="True">
+            <dxg:GridControl.View>
+                <dxg:TableView Name="view" AutoWidth="True" NavigationStyle="Row" DataRowTemplate="{StaticResource GridRowThemeKey_DataRowTemplate}" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</UserControl>
