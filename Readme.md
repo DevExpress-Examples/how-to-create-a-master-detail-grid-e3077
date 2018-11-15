@@ -1,3 +1,12 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [GridDetailContainer.cs](./CS/SLGridExample/GridDetailContainer.cs) (VB: [GridDetailContainer.vb](./VB/SLGridExample/GridDetailContainer.vb))
+* [MainPage.xaml](./CS/SLGridExample/MainPage.xaml) (VB: [MainPage.xaml.vb](./VB/SLGridExample/MainPage.xaml.vb))
+* [MainPage.xaml.cs](./CS/SLGridExample/MainPage.xaml.cs) (VB: [MainPage.xaml.vb](./VB/SLGridExample/MainPage.xaml.vb))
+* [TestDataClasses.cs](./CS/SLGridExample/TestDataClasses.cs) (VB: [TestDataClasses.vb](./VB/SLGridExample/TestDataClasses.vb))
+* [GridDataRowTemplates.xaml](./CS/SLGridExample/Themes/GridDataRowTemplates.xaml) (VB: [GridDataRowTemplates.xaml](./VB/SLGridExample/Themes/GridDataRowTemplates.xaml))
+<!-- default file list end -->
 # How to create a master-detail grid
 
 
